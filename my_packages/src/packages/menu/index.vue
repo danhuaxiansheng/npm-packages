@@ -17,20 +17,24 @@
       >
         <a class="router-name">{{ item.title }}</a>
         <template v-if="item.children && item.children.length">
-          <dl
-            v-show="item.active"
-            v-for="child in item.children"
-            :key="child.title"
-          >
-            <dt>
-              <span class="router-name">{{ child.title }}</span>
-            </dt>
-            <template v-if="child.children && child.children.length">
-              <dd v-for="lastChild in child.children" :key="lastChild.title">
-                <span class="router-name">{{ lastChild.title }}</span>
-              </dd>
-            </template>
-          </dl>
+          <div class="z-menu-item-list">
+            <dl
+              v-show="item.active"
+              v-for="child in item.children"
+              :key="child.title"
+            >
+              <dt>
+                <span class="menu-list-name">{{ child.title }}</span>
+              </dt>
+              <template v-if="child.children && child.children.length">
+                <dd v-for="lastChild in child.children" :key="lastChild.title">
+                  <span class="menu-list-child-name">{{
+                    lastChild.title
+                  }}</span>
+                </dd>
+              </template>
+            </dl>
+          </div>
         </template>
       </li>
     </ul>
@@ -89,6 +93,9 @@ export default {
   align-items: center;
 }
 
+dd {
+  margin: 0;
+}
 .z-menu {
   height: 64px;
   margin: 0px;
@@ -101,13 +108,30 @@ export default {
     cursor: pointer;
   }
   .active {
-    color: #00d2ff;
+    .router-name {
+      color: #00d2ff;
+    }
     border-bottom: 3px solid #00d2ff;
   }
 
   .z-menu-item {
     line-height: 64px;
     list-style: none;
+
+    .z-menu-item-list {
+      position: fixed;
+      display: flex;
+      width: 100%;
+      background-color: rgba(240, 240, 240, 1);
+      dl {
+        width: 13%;
+        .menu-list-name {
+          font-size: 14px;
+          font-weight: bold;
+          line-height: 55px;
+        }
+      }
+    }
   }
 }
 </style>
