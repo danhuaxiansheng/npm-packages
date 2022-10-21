@@ -1,5 +1,5 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App" />
+  <z-menu msg="Welcome to Your Vue.js App" />
 </template>
 
 <script>
