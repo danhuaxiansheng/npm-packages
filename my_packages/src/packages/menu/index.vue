@@ -121,6 +121,7 @@ dd {
     .z-menu-item-list {
       position: fixed;
       width: 100%;
+      transition: all 0.5s;
       background-color: rgba(240, 240, 240, 1);
       dl {
         width: 13%;
