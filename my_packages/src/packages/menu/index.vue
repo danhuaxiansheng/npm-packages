@@ -99,6 +99,8 @@ dd {
 .z-menu {
   height: 64px;
   margin: 0px;
+  padding: 0px;
+
   .router-name {
     line-height: 64px;
     font-size: 16px;
@@ -115,20 +117,25 @@ dd {
   }
 
   .z-menu-item {
-    line-height: 64px;
     list-style: none;
-
     .z-menu-item-list {
       position: fixed;
-      display: flex;
       width: 100%;
       background-color: rgba(240, 240, 240, 1);
       dl {
         width: 13%;
+        margin: 0 1.5%;
+        float: left;
         .menu-list-name {
           font-size: 14px;
           font-weight: bold;
           line-height: 55px;
+        }
+
+        .menu-list-child-name {
+          font-size: 12px;
+          color: #a4a7ae;
+          line-height: 30px;
         }
       }
     }
