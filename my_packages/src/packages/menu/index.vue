@@ -81,7 +81,7 @@ const dataList = ref([
 export default {
   name: "z-menu",
   props: {
-    msg: String,
+    data: String,
   },
 };
 </script>
